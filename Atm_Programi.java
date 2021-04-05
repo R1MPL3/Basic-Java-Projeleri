@@ -39,22 +39,27 @@ public class Main {
                 System.out.println("Bizi tercih ettiğiniz için teşekkür eder, iyi günler dileriz...");
                 break;
             }
+            
             else if (secim.equals("1")){
                 System.out.println("Mevcut bakiyeniz: " + bakiye + "₺'dir");
             }
+            
             else if (secim.equals("2")){
                 System.out.print("Hesabınızdan çekmek istediğiniz miktar: ");
                 int cek = scanner.nextInt();
-                scanner.nextLine(); // String bir scanner aldığımız için int scan aldıktan sonra bu kodu girmemiz gerekiyor. Aksi halde olduğunda while bize true değerini döndürüğü
-                // sırada biz if'in içine girersek (aşağıdaki if) çıktıktan sonra ekrana iki defa Bir işlem seçiniz yazısı çıkacak ve alt satıra geçilmeden yazacak.
+                scanner.nextLine(); // String bir scanner aldığımız için int scan aldıktan sonra bu kodu girmemiz gerekiyor. Aksi halde olduğunda while bize true değerini
+                // döndürdüğü sırada biz if'in içine girersek (aşağıdaki if) çıktıktan sonra ekrana iki defa Bir işlem seçiniz yazısı çıkacak ve alt satıra geçilmeden yazacak.
+                
                 if (cek > bakiye){ // Çekilmek istenen miktar hesapta bulunandan yüksek ise
                     System.out.println("Yeterli bakiyeniz bulunmamaktadır!");
                 }
+                
                 else{
                     bakiye -= cek; // Çekilmek istenen miktar hesapta bulunan paraya eşit veya daha düşük ise bakiyeden bu miktar düşürülür
                     System.out.println("Hesabınızdan " + cek + "₺ çekilmiştir."); // Kullanıcıya çekilen miktarın bilgisi verilir.
                 }
             }
+            
             else if (secim.equals("3")){
                 System.out.print("Hesabınıza yükleyeceğiniz miktar: ");
                 int yatir = scanner.nextInt();
@@ -62,6 +67,7 @@ public class Main {
                 bakiye += yatir; // Kullanıcı hesaba yükleyeceği paranın miktarını girdikten sonra hesabına girilen paranın tanımlanması
                 System.out.println("Hesabınıza " + yatir + "₺ yüklenmiştir."); // Kullanıcıya yüklenen paranın miktarı hakkında bilgi verilir.
             }
+            
             else {
                 System.out.println("Hatalı giriş yaptınız tekrar deneyiniz.");
                 hak--;
